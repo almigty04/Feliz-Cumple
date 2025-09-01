@@ -1,0 +1,208 @@
+/* ==== FUENTE PERSONALIZADA ==== */
+@font-face {
+    font-family: 'Pacifico';
+    src: url('Pacifico-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* RESET Y BODY */
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Pacifico', Avenir, sans-serif;
+    color: #111;
+    background: url('istockphoto-1287456867-612x612.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: 100%;
+}
+
+/* HEADER: título y párrafo */
+header {
+    background-color: rgba(0, 255, 255, 0.8);
+    color: #0A0A0A;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+/* HEADER TIPOGRAFÍA */
+header h1 {
+    font-size: 50px;
+    margin: 0 0 20px 0;
+}
+
+header p {
+    font-size: 20px;
+}
+
+/* CONTENEDOR DE SLIDES */
+.slide-container {
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+}
+
+/* SLIDES INDIVIDUALES */
+.slide {
+  display: none;
+  padding: 0;
+  text-align: center; /* 🔥 centra el bloque hijo */
+}
+
+.slide.active {
+  display: block;
+}
+
+.slide-content {
+  position: relative;
+  display: inline-block; /* se ajusta al tamaño de la imagen */
+  margin: 0 auto;        /* y se centra horizontalmente */
+}
+
+.slide-content img {
+  max-width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}
+
+/* TÍTULO DEL SLIDE SOBRE LA IMAGEN */
+.slide-title {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+    z-index: 2;
+}
+
+.text-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;            /* se ajusta al ancho del contenedor (que ya es la imagen) */
+  box-sizing: border-box; /* para que padding no rompa el ancho */
+  padding: 20px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+
+  /* Fondo con degradado */
+  background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
+  border-radius: 0 0 10px 10px;
+}
+
+
+/* BOTONES */
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* ESTILOS DEL BOTÓN CTA */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.cta {
+    position: relative;
+    padding: 19px 22px;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+}
+
+.cta:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    border-radius: 28px;
+    background: rgba(0, 255, 255, 0.8);
+    width: 56px;
+    height: 56px;
+    transition: all 0.3s ease;
+}
+
+.cta span {
+    position: relative;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 900;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.cta svg {
+    position: relative;
+    top: 0;
+    margin-left: 10px;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #111;
+    stroke-width: 2;
+    transform: translateX(-5px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover:before {
+    width: 100%;
+    background: #ffab9d;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active {
+    transform: scale(0.96);
+}
+
+/* FLECHA INVERTIDA PARA BOTÓN ANTERIOR */
+.cta svg.reverse {
+    transform: translateX(-5px) rotate(180deg);
+}
+
+.cta:hover svg.reverse {
+    transform: rotate(180deg) translateX(0);
+}
+
+/* AJUSTES PARA MÓVILES */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .slide-title {
+        font-size: 18px;
+        top: 5px;
+    }
+
+    .text-overlay {
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .slide-container {
+        width: 95%;
+        margin: 30px auto;
+    }
+}
